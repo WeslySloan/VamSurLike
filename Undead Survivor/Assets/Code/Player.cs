@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Rendering;
 using UnityEngine;
+using UnityEngine.InputSystem; // Player input Package
+
+
 
 public class Player : MonoBehaviour
 {
@@ -36,5 +39,10 @@ public class Player : MonoBehaviour
 
         Vector2 nextVec = inputVec.normalized * speed * Time.fixedDeltaTime;
         rigid.MovePosition (rigid.position + nextVec);
+    }
+
+    private void OnMove(InputValue value)   // Player input Package
+    {
+        inputVec = value.Get<Vector2>();
     }
 }
