@@ -6,6 +6,7 @@ using UnityEngine.InputSystem; // Player input Package
 
 
 
+
 public class Player : MonoBehaviour
 {
     public Vector2 inputVec;
@@ -13,14 +14,18 @@ public class Player : MonoBehaviour
 
 
     Rigidbody2D rigid;
+    SpriteRenderer spriter;
+    Animator anim;
 
-    // Start is called before the first frame update
-    void Start()
+
+    void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
+        spriter = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         inputVec.x = Input.GetAxisRaw("Horizontal");
@@ -45,4 +50,15 @@ public class Player : MonoBehaviour
     {
         inputVec = value.Get<Vector2>();
     }
+
+    private void LateUpdate()
+    {
+        anim.SetFloat("Speed", inputVec.magnitude);
+
+        if (inputVec.x != 0)
+        {
+            spriter.flipX = inputVec.x < 0;
+        }
+    }
+
 }
