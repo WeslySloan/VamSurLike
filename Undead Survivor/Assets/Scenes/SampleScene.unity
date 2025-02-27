@@ -14846,6 +14846,55 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1357160166}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &545490297
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 545490298}
+  - component: {fileID: 545490299}
+  m_Layer: 0
+  m_Name: Weapon 0
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &545490298
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 545490297}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1287780058}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &545490299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 545490297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29b7bf18a708e3040ac054c2b4fb501a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 0
+  prefabId: 1
+  damage: 11
+  count: 2
+  speed: 0
 --- !u!1 &546532417
 GameObject:
   m_ObjectHideFlags: 0
@@ -15445,6 +15494,7 @@ Transform:
   - {fileID: 820327055}
   - {fileID: 1856130890}
   - {fileID: 1357160166}
+  - {fileID: 545490298}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1287780059
@@ -15638,12 +15688,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: []
   spawnData:
-  - spriteType: 0
-    spawnTime: 0.7
+  - spawnTime: 0.7
+    spriteType: 0
     health: 10
     speed: 1.5
-  - spriteType: 1
-    spawnTime: 0.2
+  - spawnTime: 0.2
+    spriteType: 1
     health: 15
     speed: 2.4
 --- !u!1 &1373062716
@@ -20562,8 +20612,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabs:
-  - {fileID: 9221227341959633969, guid: e738808f95f100446bbb140137f7bf6e, type: 3}
   - {fileID: 6437429048847375751, guid: c50583b1edbe623438220f8528e74268, type: 3}
+  - {fileID: 1246697644230909801, guid: 1970f4fa9df687249bb77d1992fb5274, type: 3}
 --- !u!1 &2028364516
 GameObject:
   m_ObjectHideFlags: 0
