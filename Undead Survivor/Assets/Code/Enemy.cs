@@ -29,7 +29,7 @@ public class Enemy : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (!isLive || anim.GetCurrentAnimatorStateInfo(0).IsName(""))
+        if (!isLive || anim.GetCurrentAnimatorStateInfo(0).IsName("Hit"))
             return;
 
         Vector2 dirVec = target.position - rigid.position;
@@ -51,6 +51,12 @@ public class Enemy : MonoBehaviour
     {
         target = GameManager.instance.player.GetComponent<Rigidbody2D>();
         isLive = true;
+
+        coll.enabled = true;
+        rigid.simulated = true;
+        spriter.sortingOrder = 2;
+        anim.SetBool("Dead", false);
+
         health = maxhealth;
     }
 
@@ -81,10 +87,8 @@ public class Enemy : MonoBehaviour
             isLive = false;
             coll.enabled = false;
             rigid.simulated = false;
-            spriter.sortingOrder = 0;
+            spriter.sortingOrder = 1;
             anim.SetBool("Dead", true);
-
-            Dead();
         }
     }
 
