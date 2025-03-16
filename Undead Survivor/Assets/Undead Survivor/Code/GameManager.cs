@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     // static으로 선언한 변수는 인스펙터에 표시되지 않음
     public static GameManager instance;
     [Header("# Game Control")]
+    public bool isLive;
     public float gameTime;
     public float maxGameTime = 2 * 10f;
     [Header("# Player Info")]
@@ -37,6 +38,9 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        if (!isLive)
+            return;
+
         gameTime += Time.deltaTime;
 
         if (gameTime > maxGameTime)
@@ -48,7 +52,7 @@ public class GameManager : MonoBehaviour
     {
         exp++;
 
-        if (exp == nextExp[level])
+        if (exp == nextExp[Mathf.Min(level, nextExp.Length - 1)])
         {
             level++;
             exp = 0;
@@ -56,4 +60,16 @@ public class GameManager : MonoBehaviour
         }
     }
 
+
+    public void Stop()
+    {
+        isLive = false;
+        Time.timeScale = 0; // 0배속
+    }
+
+    public void Resume()
+    {
+        isLive = true;
+        Time.timeScale = 1; // 1배속
+    }
 }
