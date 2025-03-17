@@ -22,18 +22,16 @@ public class GameManager : MonoBehaviour
     public PoolManager pool;
     public LevelUp uiLevelUp;
 
-    private void Awake()
+    void Awake()
     {
         instance = this;
     }
 
-    private void Start()
+    public void GameStart()
     {
         health = maxHealth;
-
-        // 임시 스크립트 (첫번쨰 캐릭터 선택)
-        uiLevelUp.Select(0);
-
+        uiLevelUp.Select(0);  // 임시 스크립트 (첫번쨰 캐릭터 선택)
+        isLive = true;
     }
 
     void Update()
