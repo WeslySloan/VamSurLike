@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
         health = maxHealth;
 
         player.gameObject.SetActive(true);
-        uiLevelUp.Select(playerId);  // 임시 스크립트 (첫번쨰 캐릭터 선택)
+        uiLevelUp.Select(playerId % 2);  // 홀수 번째 근접무기, 짝수번째 원거리무기
         Resume();
     }
 
