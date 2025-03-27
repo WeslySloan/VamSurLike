@@ -18185,7 +18185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 583489c40a8b83e4093ce341fd9d5cc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LockCharacter:
+  lockCharacter:
   - {fileID: 370211843}
   - {fileID: 405367753}
   unlockCharacter:

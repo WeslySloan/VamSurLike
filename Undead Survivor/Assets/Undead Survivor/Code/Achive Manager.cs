@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class AchiveManager : MonoBehaviour
 {
-    public GameObject[] LockCharacter;
+    public GameObject[] lockCharacter;
     public GameObject[] unlockCharacter;
 
     enum Achive { UnlockPotato, UnlockBean } // ¿­°ÅÇü 
@@ -39,13 +39,42 @@ public class AchiveManager : MonoBehaviour
 
     void UnLockCharacter()
     {
-        for (int index = 0; index < LockCharacter.Length; index++)
+        for (int index = 0; index < lockCharacter.Length; index++)
         {
             string achiveName = achives[index].ToString();
             bool isUnlock = PlayerPrefs.GetInt(achiveName) == 1;
-            LockCharacter[index].SetActive(!isUnlock);
+            lockCharacter[index].SetActive(!isUnlock);
             unlockCharacter[index].SetActive(isUnlock);
         }
+    }
+
+    void LateUpdate()
+    {
+        foreach (Achive achive in achives)
+        {
+            CheckAchive(achive);
+        }
+    }
+
+    void CheckAchive(Achive achive)
+    {
+        bool isAchive = false;
+
+        switch (achive)
+        {
+            case Achive.UnlockPotato:
+                isAchive = GameManager.instance.kill >= 10;
+                break;
+            case Achive.UnlockBean:
+                isAchive = GameManager.instance.gameTime == GameManager.instance.maxGameTime;
+                break;
+        }
+
+        if (isAchive && PlayerPrefs.GetInt(achive.ToString()) == 0)
+        {
+            PlayerPrefs.SetInt(achive.ToString(), 1);
+        }
+
     }
 
 }
