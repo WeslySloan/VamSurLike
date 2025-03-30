@@ -21,11 +21,11 @@ public class Character : MonoBehaviour
 
     public static float Damage
     { 
-        get { return GameManager.instance.playerId == 2 ? 1.2f : 1f; }
+        get { return GameManager.instance.playerId == 2 ? 1.2f : 1f; }   // 2번캐릭터 20% 뎀증
     }
 
     public static int Count
     {
-        get { return GameManager.instance.playerId == 3 ? 1 : 0; }
+        get { return GameManager.instance.playerId == 3 ? 1 : 0; } // 3번캐릭터 count추가
     }
 }
