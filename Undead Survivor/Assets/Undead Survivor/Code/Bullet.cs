@@ -50,4 +50,12 @@ public class Bullet : MonoBehaviour
         if (dir > 20f)
             this.gameObject.SetActive(false);
     }
+
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        if (!collision.CompareTag("Area") || per == -100)
+            return;
+
+        gameObject.SetActive(false);
+    }
 }
