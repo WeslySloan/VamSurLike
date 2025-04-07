@@ -15832,7 +15832,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 10.944445
+  orthographic size: 10.805555
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -18834,6 +18834,7 @@ MonoBehaviour:
     spriteType: 1
     health: 15
     speed: 2.4
+  levelTime: 0
 --- !u!1 &1373062716
 GameObject:
   m_ObjectHideFlags: 0
@@ -27043,7 +27044,7 @@ MonoBehaviour:
   level: 0
   kill: 0
   exp: 0
-  nextExp: 0100000002000000030000000400000005000000060000000700000008000000090000000a000000
+  nextExp: 0a0000001e0000003c0000006400000096000000d20000001801000068010000c201000058020000
   player: {fileID: 1287780061}
   pool: {fileID: 2016542321}
   uiLevelUp: {fileID: 1734796215}
