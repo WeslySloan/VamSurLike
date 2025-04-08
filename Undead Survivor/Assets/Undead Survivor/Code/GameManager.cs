@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
     public PoolManager pool;
     public LevelUp uiLevelUp;
     public Result uiResult;
+    public Transform uiJoy;
     public GameObject enemyCleaner;
 
 
@@ -123,11 +124,13 @@ public class GameManager : MonoBehaviour
     {
         isLive = false;
         Time.timeScale = 0; // 0배속
+        uiJoy.localScale = Vector3.zero;
     }
 
     public void Resume()
     {
         isLive = true;
         Time.timeScale = 1; // 1배속
+        uiJoy.localScale = Vector3.one;
     }
 }
